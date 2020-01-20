@@ -29,23 +29,24 @@ Route::get('/news', function () {
 Route::get('/contact', function () {
     return view('pages.contactUs');
 })-> name('contact');
-Route::get('/teacher/{index}',function($index){
-    $teachers = array('Channak','Ronan','Sieha','Rady','Rith');
-    $arrlength = count($teachers);
-    if($index < $arrlength){
-        echo "The teacher is: ".$teachers[$index];
-    }else{
-        echo "The array is: ";
-        $indexs = $arrlength - 1;
-        for($i = 0; $i <= $indexs; $i++){
-            if($i < $indexs){
-                echo "[$i]$teachers[$i], ";
-            }else if($i == $indexs){
-                echo "[$i]$teachers[$i]";
-            } 
-        }
-        echo "<br>";
-        echo "Not teacher with this index: " .$index ."<br>";
-        echo "The largest index is: " .$indexs;
-    }
-});
+// Route::get('/teacher/{index}',function($index){
+//     $teachers = array('Channak','Ronan','Sieha','Rady','Rith');
+//     $arrlength = count($teachers);
+//     if($index < $arrlength){
+//         echo "The teacher is: ".$teachers[$index];
+//     }else{
+//         echo "The array is: ";
+//         $indexs = $arrlength - 1;
+//         for($i = 0; $i <= $indexs; $i++){
+//             if($i < $indexs){
+//                 echo "[$i]$teachers[$i], ";
+//             }else if($i == $indexs){
+//                 echo "[$i]$teachers[$i]";
+//             } 
+//         }
+//         echo "<br>";
+//         echo "Not teacher with this index: " .$index ."<br>";
+//         echo "The largest index is: " .$indexs;
+//     }
+// });
+Route::get('customer','pageController@listCustomer');
